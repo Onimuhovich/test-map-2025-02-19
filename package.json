@@ -1,0 +1,22 @@
+{
+  "name": "test-map-2025-02-19",
+  "version": "1.0.0",
+  "description": "test question",
+  "engines": {
+    "node": "22.13.0",
+    "npm": "10.9.2"
+  },
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onimuhovich/test-map-2025-02-19.git"
+  },
+  "author": "Onimuhovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onimuhovich/test-map-2025-02-19/issues"
+  },
+  "homepage": "https://github.com/Onimuhovich/test-map-2025-02-19#readme"
+}
