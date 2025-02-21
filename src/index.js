@@ -1,5 +1,5 @@
 // styles
-import "./styles.scss";
+import "./assets/styles/index.scss";
 import "./widgets/game-map/styles.scss";
 
 // js

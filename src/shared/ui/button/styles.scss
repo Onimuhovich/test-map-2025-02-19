@@ -1,0 +1,13 @@
+$parent: "button";
+
+.#{$parent} {
+  height: 64px;
+  background:
+    linear-gradient(to bottom, var(--color-blue-100), var(--color-blue-200)) padding-box no-repeat,
+    linear-gradient(to bottom, var(--color-blue-200), var(--color-blue-100)) border-box no-repeat,
+    linear-gradient(to bottom, var(--color-blue-100), var(--color-blue-200)) border-box no-repeat;
+  background-size: 100% 100%, 98% 94%, 100%;
+  background-position: center, center, center;
+  border-radius: 16px;
+  border: 4px solid transparent;
+}

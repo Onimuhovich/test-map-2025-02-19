@@ -1,6 +1,17 @@
 <div class="game-map">
-  <img class="game-map__bg" src="/assets/images/map.png" alt="игровая карта" />
-  {% include "/Users/maksimportnov/Documents/scillup/test-map-2025-02-19/src/entities/player/index.twig" with {
-    class: "game-map__figure",
-  } only %}
+  <div class="game-map__wrapper">
+    <img class="game-map__bg" src="/assets/images/map.png" alt="игровая карта" />
+    {% include "/src/entities/player/index.twig" with {
+      class: "game-map__figure",
+    } only %}
+  </div>
+  <div class="game-map__footer">
+    {% embed "src/shared/ui/button/index.twig" with {
+      class: "game-map__btn-run",
+    } only %}
+      {% block content %}
+        В УНИВЕР
+      {% endblock %}
+    {% endembed %}
+  </div>
 </div>

@@ -1,0 +1,14 @@
+@use "./normalize";
+@use "./variables";
+@use "./font";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to bottom, var(--color-green-100), var(--color-green-200));
+  display: flex;
+  align-items: center;
+  font-family: "Cambry", sans-serif;
+}

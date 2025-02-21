@@ -1,5 +1,4 @@
 import Player from "../../../entities/player";
-import getCoordsInPercent from "../../../shared/helpers/getCoordsInContainer";
 
 /**
  * 
