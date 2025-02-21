@@ -1,5 +1,9 @@
-@use "./assetss/styles/variables.scss";
+@use "./assets/styles/normalize.css";
+@use "./assets/styles/variables.scss";
 
 body {
   background-color: var(--color-green-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

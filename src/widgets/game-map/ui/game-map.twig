@@ -1,3 +1,6 @@
 <div class="game-map">
-  <img src="/assets/img/map.jpeg" alt="игровая карта">
+  <img class="game-map__bg" src="/assets/images/map.png" alt="игровая карта" />
+  {% include "/Users/maksimportnov/Documents/scillup/test-map-2025-02-19/src/entities/player/index.twig" with {
+    class: "game-map__figure",
+  } only %}
 </div>

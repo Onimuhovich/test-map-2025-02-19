@@ -1,14 +1,11 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const MODES = {
   PRODUCTION: "production",
   DEVELOPMENT: "development",
-}
-
-const PATHS = {
-  DIST: path.resolve(__dirname, 'dist'),
 }
 
 const isProd = process.env.NODE_ENV === MODES.PRODUCTION;
@@ -17,6 +14,11 @@ const plugins = [
   new HTMLWebpackPlugin({
     template: "./src/index.twig",
   }),
+  new CopyPlugin({
+    patterns: [
+      {from: path.resolve(__dirname, "src/assets/images"), to: "assets/images"}
+    ]
+  })
 ]
 
 if (isProd) {
@@ -28,8 +30,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: "bundle.js",
-    path: PATHS.DIST,
-    publicPath: PATHS.DIST,
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -46,10 +47,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        loader: "file-loader",
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
         options: {
-          name: "/asseis/images/[name].[ext]",
+          name: "[name].[ext]",
         }
       },
       {
@@ -58,12 +59,7 @@ module.exports = {
       },
       {
         test: /\.twig$/,
-        use: [
-          'raw-loader',
-          {
-            loader: 'twig-html-loader',
-          }
-        ]
+        loader: "twig-loader",
       },
       {
         test: /\.(?:js|mjs|cjs)$/,
